@@ -33,7 +33,7 @@ Brain-Tumor-Detection-System/
 │   ├── app.py              # Flask API server
 │   ├── requirements.txt    # Python dependencies
 │   └── model/
-│       └── vgg_model.h5    # Trained VGG16 model
+│       └── 2026-06-07_VGG_model.h5    # Trained VGG16 model
 ├── frontend/
 │   ├── public/
 │   │   └── index.html

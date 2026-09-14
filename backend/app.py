@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load model once at startup
-MODEL_PATH = r'D:\Nova Brain Tumor Detector\backend\model\2026-06-07_VGG_model.h5'
+MODEL_PATH = os.path.join(os.path.dirname(__file__), 'model', '2026-06-07_VGG_model.h5')
 model = load_model(MODEL_PATH)
 IMG_SIZE = (224, 224)
 

@@ -124,7 +124,7 @@ export default function App() {
   const [error, setError] = useState(null);
   const [dragging, setDragging] = useState(false);
 
-  const handleFile = (file) => {
+  const handleFile = useCallback((file) => {
     if (!file || !file.type.startsWith("image/")) {
       setError("Please upload a valid image file.");
       return;
@@ -135,13 +135,13 @@ export default function App() {
     const reader = new FileReader();
     reader.onload = (e) => setPreview(e.target.result);
     reader.readAsDataURL(file);
-  };
+  }, []);
 
   const handleDrop = useCallback((e) => {
     e.preventDefault();
     setDragging(false);
     handleFile(e.dataTransfer.files[0]);
-  }, []);
+  }, [handleFile]);
 
   const handlePredict = async () => {
     if (!image) return;
